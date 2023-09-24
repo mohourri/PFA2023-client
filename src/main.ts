@@ -1,7 +1,18 @@
+import './polyfills';
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then((ref: any) => {
+    // Ensure Angular destroys itself on hot reloads.
+    if ((window as any)['ngRef']) {
+      (window as any)['ngRef'].destroy();
+    }
+    (window as any)['ngRef'] = ref;
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+    // Otherwise, log the boot error
+  })
+  .catch((err) => console.error(err));
