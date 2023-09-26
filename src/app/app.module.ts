@@ -10,6 +10,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -19,6 +22,10 @@ import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SalesComponent } from './components/sales/sales.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component'
+import {CommandesTableComponent} from './components/commandes-table/commandes-table.component'
+
+import { HttpClientModule } from '@angular/common/http'; 
 
 const routes: Routes = [
   {
@@ -57,6 +64,10 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatMenuModule,
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule,
+    MatTableModule
   ],
   declarations: [
     AppComponent,
@@ -66,6 +77,8 @@ const routes: Routes = [
     PageHeaderComponent,
     HomeComponent,
     SalesComponent,
+    CommandesTableComponent,
+    DashboardComponent
   ],
   bootstrap: [AppComponent],
 })
