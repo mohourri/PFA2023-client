@@ -13,6 +13,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import {MatSlideToggle} from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -24,6 +25,15 @@ import { SalesComponent } from './components/sales/sales.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component'
 import {CommandesTableComponent} from './components/commandes-table/commandes-table.component'
+import {DashCardComponent} from './components/dash-card/dash-card.component'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ModalComponent} from '../../src/app/components/modal/modal.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http'; 
 
@@ -67,7 +77,14 @@ const routes: Routes = [
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatTabsModule
   ],
   declarations: [
     AppComponent,
@@ -78,8 +95,10 @@ const routes: Routes = [
     HomeComponent,
     SalesComponent,
     CommandesTableComponent,
-    DashboardComponent
-  ],
+    DashboardComponent,
+    DashCardComponent,
+    ModalComponent
+      ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

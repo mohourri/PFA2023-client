@@ -1,3 +1,4 @@
+
 .demo-table {
   width: 100%;
 }
@@ -10,6 +11,8 @@
 
 .mat-mdc-row:hover .mat-mdc-cell {
   border-color: currentColor;
+  background-color: rgba(168, 168, 168, 0.745);
+
 }
 
 .demo-row-is-clicked {

@@ -1,0 +1,89 @@
+<mat-card *ngIf="commande">
+  <mat-card-header>
+    <h2>Details</h2>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-tab-group>
+      <!-- Command Fields Tab -->
+      <mat-tab label="Command Fields">
+        <div class="tab-content">
+          <mat-form-field class="example-full-width">
+            <mat-label>ID</mat-label>
+            <input matInput [(ngModel)]="commande.ID" placeholder="ID" disabled>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="commande.description" placeholder="Description"></textarea>
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Date Demande</mat-label>
+            <textarea matInput [(ngModel)]="commande.datedemande" placeholder="Date Demande"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Date Validation</mat-label>
+            <textarea matInput [(ngModel)]="commande.date_validation" placeholder="Date Validation"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Status</mat-label>
+            <textarea matInput [(ngModel)]="commande.status" placeholder="Status"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Validé</mat-label>
+            <textarea matInput [(ngModel)]="commande.valide" placeholder="Validé"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-tab>
+
+      <!-- Client Fields Tab -->
+      <mat-tab label="Client Fields">
+        <div class="tab-content">
+          <mat-form-field class="example-full-width">
+            <mat-label>Client Nom</mat-label>
+            <input matInput [(ngModel)]="commande.client.nom" placeholder="Client Nom">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Client Prénom</mat-label>
+            <input matInput [(ngModel)]="commande.client.prenom" placeholder="Client Prénom">
+          </mat-form-field>
+
+          <!-- Other client fields go here -->
+        </div>
+      </mat-tab>
+
+      <!-- Vendeur Fields Tab -->
+      <mat-tab label="Vendeur Fields">
+        <div class="tab-content">
+          <mat-form-field class="example-full-width">
+            <mat-label>Vendeur Nom</mat-label>
+            <input matInput [(ngModel)]="commande.vendeur.nom" placeholder="Vendeur Nom">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Vendeur Prénom</mat-label>
+            <input matInput [(ngModel)]="commande.vendeur.prenom" placeholder="Vendeur Prénom">
+          </mat-form-field>
+
+          <!-- Other vendeur fields go here -->
+        </div>
+      </mat-tab>
+
+      <!-- Ligne Command Fields Tab -->
+      <mat-tab label="Ligne Command Fields">
+        <div class="tab-content">
+          <div *ngFor="let ligneCommande of commande.ligne_commandes">
+            <p>{{ ligneCommande.article.libelle }} - {{ ligneCommande.commande.client.nom }}</p>
+            <!-- Other ligne command fields go here -->
+          </div>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
