@@ -1,88 +1,168 @@
-<mat-card *ngIf="commande">
-  <mat-card-header>
-    <h2>Details</h2>
+<mat-card *ngIf="commande" class="modal-content">
+
+  <mat-card-header class="form-header">
+      <h2 class="form-title">Détails de la Commande</h2>    
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content class="form-content">
     <mat-tab-group>
-      <!-- Command Fields Tab -->
+
+      <!-- Onglet Command Fields -->
       <mat-tab label="Command Fields">
-        <div class="tab-content">
-          <mat-form-field class="example-full-width">
+        <div class="form-row">
+          <mat-form-field >
             <mat-label>ID</mat-label>
             <input matInput [(ngModel)]="commande.ID" placeholder="ID" disabled>
           </mat-form-field>
-
-          <mat-form-field class="example-full-width">
+          <mat-form-field >
             <mat-label>Description</mat-label>
             <textarea matInput [(ngModel)]="commande.description" placeholder="Description"></textarea>
           </mat-form-field>
-          
-          <mat-form-field class="example-full-width">
+        </div>
+        <div class="form-row">
+          <mat-form-field >
             <mat-label>Date Demande</mat-label>
-            <textarea matInput [(ngModel)]="commande.datedemande" placeholder="Date Demande"></textarea>
+            <input matInput [matDatepicker]="picker1" [(ngModel)]="commande.datedemande" placeholder="Date Demande">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
-
-          <mat-form-field class="example-full-width">
+          <mat-form-field >
             <mat-label>Date Validation</mat-label>
-            <textarea matInput [(ngModel)]="commande.date_validation" placeholder="Date Validation"></textarea>
+            <input matInput [matDatepicker]="picker2" [(ngModel)]="commande.date_validation" placeholder="Date Validation">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
-
-          <mat-form-field class="example-full-width">
+        </div>
+        <div class="form-row">
+          <mat-form-field>
             <mat-label>Status</mat-label>
-            <textarea matInput [(ngModel)]="commande.status" placeholder="Status"></textarea>
+            <input matInput [(ngModel)]="commande.status" placeholder="Status">
           </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Validé</mat-label>
-            <textarea matInput [(ngModel)]="commande.valide" placeholder="Validé"></textarea>
-          </mat-form-field>
+          <mat-slide-toggle class="flex-1" [(ngModel)]="commande.valide">Validé</mat-slide-toggle>
         </div>
       </mat-tab>
 
-      <mat-icon>person</mat-icon> 
+      <!-- Onglet Client Fields -->
       <mat-tab label="Client Fields">
         <div class="tab-content">
-          <mat-form-field class="example-full-width">
-            <mat-label>Client Nom</mat-label>
+          <mat-form-field>
+            <mat-label>CIN</mat-label>
+            <input matInput [(ngModel)]="commande.client.CIN" placeholder="Client CIN">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Nom</mat-label>
             <input matInput [(ngModel)]="commande.client.nom" placeholder="Client Nom">
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
-            <mat-label>Client Prénom</mat-label>
+          <mat-form-field>
+            <mat-label>Prénom</mat-label>
             <input matInput [(ngModel)]="commande.client.prenom" placeholder="Client Prénom">
           </mat-form-field>
 
+          <mat-form-field>
+            <mat-label>Sexe</mat-label>
+            <mat-select [(ngModel)]="commande.client.sexe">
+              <mat-option value="m">Masculin</mat-option>
+              <mat-option value="f">Féminin</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Date de Naissance</mat-label>
+            <input matInput [matDatepicker]="picker3" [(ngModel)]="commande.client.date_naissance" placeholder="Date de Naissance">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Téléphone</mat-label>
+            <input matInput [(ngModel)]="commande.client.tele" placeholder="Client Téléphone">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Adresse</mat-label>
+            <input matInput [(ngModel)]="commande.client.adresse" placeholder="Client Adresse">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Ville</mat-label>
+            <input matInput [ngModel]="capitalizeFirstLetter(commande.client.ville.nom)" (ngModelChange)="commande.client.ville.nom = $event" placeholder="Nom de la ville">          
+          </mat-form-field>
         </div>
       </mat-tab>
 
-      <!-- Vendeur Fields Tab -->
-      <mat-tab label="Vendeur Fields">
+
+       <!-- Onglet Vendeur Fields -->
+       <mat-tab label="Vendeur Fields">
         <div class="tab-content">
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
+            <mat-label>Vendeur CIN</mat-label>
+            <input matInput [(ngModel)]="commande.vendeur.CIN" placeholder="Vendeur CIN">
+          </mat-form-field>
+
+          <mat-form-field>
             <mat-label>Vendeur Nom</mat-label>
             <input matInput [(ngModel)]="commande.vendeur.nom" placeholder="Vendeur Nom">
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <mat-label>Vendeur Prénom</mat-label>
             <input matInput [(ngModel)]="commande.vendeur.prenom" placeholder="Vendeur Prénom">
           </mat-form-field>
 
-          <!-- Other vendeur fields go here -->
+          <mat-form-field>
+            <mat-label>Vendeur Sexe</mat-label>
+            <mat-select [(ngModel)]="commande.vendeur.sexe">
+              <mat-option value="m">Masculin</mat-option>
+              <mat-option value      ="f">Féminin</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Vendeur Date de Naissance</mat-label>
+            <input matInput [matDatepicker]="picker4" [(ngModel)]="commande.vendeur.date_naissance" placeholder="Date de Naissance">
+            <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Vendeur Téléphone</mat-label>
+            <input matInput [(ngModel)]="commande.vendeur.tele" placeholder="Vendeur Téléphone">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Vendeur Adresse</mat-label>
+            <input matInput [(ngModel)]="commande.vendeur.adresse" placeholder="Vendeur Adresse">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Vendeur Ville</mat-label>
+            <input matInput [(ngModel)]="commande.vendeur.ville" placeholder="Vendeur Ville">
+          </mat-form-field>
         </div>
       </mat-tab>
 
-      <!-- Ligne Command Fields Tab -->
-      <mat-tab label="Ligne Command Fields">
-        <div class="tab-content">
-          <div *ngFor="let ligneCommande of commande.ligne_commandes">
-            <p>{{ ligneCommande.article.libelle }} - {{ ligneCommande.commande.client.nom }}</p>
-            <!-- Other ligne command fields go here -->
-          </div>
-        </div>
-      </mat-tab>
+   <!-- Onglet Ligne Command Fields -->
+   <mat-tab label="Ligne Command Fields">
+    <div class="tab-content">
+      <div *ngFor="let ligneCommande of commande.ligne_commandes">
+        <mat-card class="ligne-commande-card">
+          <mat-card-content>
+            <p><strong>ID:</strong> {{ ligneCommande.ID }}</p>
+            <p><strong>Quantité:</strong> {{ ligneCommande.Quantite }}</p>
+            <p><strong>Article Libellé:</strong> {{ ligneCommande.article.libelle }}</p>
+            <p><strong>Commande Client Nom:</strong> {{ ligneCommande.commande.client.nom }}</p>
+            <!-- ... (Autres champs de la ligne de commande) ... -->
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
 
-    </mat-tab-group>
+</mat-tab-group>
+
+    <button mat-raised-button color="primary">Valider</button>
+
   </mat-card-content>
 </mat-card>

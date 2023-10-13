@@ -30,7 +30,6 @@ export class CommandesTableComponent implements OnInit {
 
   public openDetailsDialog = (id: number) => {
     const dialogRef = this.dialog.open(ModalComponent, {
-      width: '70%',
       data: this.dataSource.find(c => c.ID = id) 
     });
 

@@ -16,8 +16,8 @@ export class LayoutComponent {
 
   menu: Menu = [
     {
-      title: 'Home',
-      icon: 'home',
+      title: 'Commandes',
+      icon: 'receipt',
       link: '/home',
       color: '#ff7f0e',
     },
@@ -40,5 +40,11 @@ export class LayoutComponent {
         },
       ],
     },
+    {
+      title: 'Clients',
+      icon: 'personne',
+      link: '/clients',
+      color: '#ff7f0e',
+    }
   ];
 }

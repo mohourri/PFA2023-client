@@ -34,6 +34,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+import { CapitalizePipe } from './pipes/capitalizing-pipe';
 
 import { HttpClientModule } from '@angular/common/http'; 
 
@@ -84,7 +86,8 @@ const routes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule
   ],
   declarations: [
     AppComponent,
@@ -97,7 +100,8 @@ const routes: Routes = [
     CommandesTableComponent,
     DashboardComponent,
     DashCardComponent,
-    ModalComponent
+    ModalComponent,
+    CapitalizePipe
       ],
   bootstrap: [AppComponent],
 })
