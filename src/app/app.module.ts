@@ -19,6 +19,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SalesComponent } from './components/sales/sales.component';
@@ -46,18 +47,12 @@ const routes: Routes = [
     redirectTo: 'home',
   },
   {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'sales',
-        component: SalesComponent,
-      },
-    ],
+    path: 'home',
+    component: DashboardComponent,
+  },
+  {
+    path: 'clients',
+    component: SalesComponent, 
   },
 ];
 
@@ -101,8 +96,9 @@ const routes: Routes = [
     DashboardComponent,
     DashCardComponent,
     ModalComponent,
-    CapitalizePipe
-      ],
+    CapitalizePipe,
+    SidebarComponent
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

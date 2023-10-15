@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import Commande from 'src/app/interfaces/Commande';
 import { ServerService } from 'src/app/service/server.service';
@@ -14,7 +14,7 @@ export class CommandesTableComponent implements OnInit {
   dataSource: Commande[] = [];
   displayedColumns: string[] = ['id','nom', 'datedemande', 'date_validation', 'valide', 'client', 'vendeur', 'description', 'status', 'details'];
 
-  constructor(private server: ServerService, public dialog: MatDialog) {}
+  constructor(private server: ServerService, public dialog: MatDialog,private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     if(this.fromC=='dash')
@@ -23,8 +23,9 @@ export class CommandesTableComponent implements OnInit {
   }
 
   getCommandes(){
-    this.server.getData().subscribe((response: Commande[]) => {
+    this.server.getNoValidatedCommandes().subscribe((response: Commande[]) => {
       this.dataSource = response;
+      this.cdr.detectChanges(); // Manually trigger change detection
     });
   }
 
@@ -35,7 +36,6 @@ export class CommandesTableComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // this.animal = result;
     });
   }
   public redirectToUpdate = (id: string) => {

@@ -138,7 +138,7 @@
 
           <mat-form-field>
             <mat-label>Vendeur Ville</mat-label>
-            <input matInput [(ngModel)]="commande.vendeur.ville" placeholder="Vendeur Ville">
+            <input matInput [(ngModel)]="commande.vendeur.ville.nom" placeholder="Vendeur Ville">
           </mat-form-field>
         </div>
       </mat-tab>
@@ -162,7 +162,7 @@
 
 </mat-tab-group>
 
-    <button mat-raised-button color="primary">Valider</button>
+    <button mat-raised-button color="primary" (click)="validateCommande(commande.ID)">Valider</button>
 
   </mat-card-content>
 </mat-card>

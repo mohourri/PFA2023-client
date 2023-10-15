@@ -14,4 +14,16 @@ export class ServerService {
       console.log("hey")
       return this.http.get(`${this.baseUrl}/commandes`);
     }
+  getNoValidatedCommandes(): Observable<any> {
+      console.log("hey")
+      return this.http.get(`${this.baseUrl}/no-validated-commandes`);
+  }
+
+  validateCommande(id: number): Observable<any> {
+    console.log("Le ID est :" + id);
+    console.log(`${this.baseUrl}/validate/${id}`);
+
+    // Send a GET request with the ID as part of the URL path
+    return this.http.get(`${this.baseUrl}/validate/${id}`);
+}
 }
