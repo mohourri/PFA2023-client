@@ -17,13 +17,24 @@ export class CommandesTableComponent implements OnInit {
   constructor(private server: ServerService, public dialog: MatDialog,private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    if(this.fromC=='dash')
-      console.log("I'm from dashboard")
-    this.getCommandes();
+    if(this.fromC=='dash'){
+      this.getNoValidatedCommandes();
+    }else if(this.fromC=='general'){
+      this.getAllCommandes();
+    }
+      
+      
   }
 
-  getCommandes(){
+  getNoValidatedCommandes(){
     this.server.getNoValidatedCommandes().subscribe((response: Commande[]) => {
+      this.dataSource = response;
+      this.cdr.detectChanges(); // Manually trigger change detection
+    });
+  }
+
+  getAllCommandes(){
+    this.server.getAllCommandes().subscribe((response: Commande[]) => {
       this.dataSource = response;
       this.cdr.detectChanges(); // Manually trigger change detection
     });

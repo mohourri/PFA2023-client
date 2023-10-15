@@ -15,7 +15,7 @@ import {
 export class HeaderComponent {
   @Output() menuToggled = new EventEmitter<boolean>();
 
-  user: string = 'Enea';
+  user: string = 'Hatim';
 
   // constructor(private authService: AuthService) { }
 

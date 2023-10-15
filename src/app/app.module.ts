@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SalesComponent } from './components/sales/sales.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component'
+import {CommandesComponentComponent} from './components/commandes-component/commandes-component.component'
 import {CommandesTableComponent} from './components/commandes-table/commandes-table.component'
 import {DashCardComponent} from './components/dash-card/dash-card.component'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: DashboardComponent,
+  },
+  {
+    path: 'commandes',
+    component: CommandesComponentComponent,
   },
   {
     path: 'clients',
@@ -97,7 +102,8 @@ const routes: Routes = [
     DashCardComponent,
     ModalComponent,
     CapitalizePipe,
-    SidebarComponent
+    SidebarComponent,
+    CommandesComponentComponent
     ],
   bootstrap: [AppComponent],
 })

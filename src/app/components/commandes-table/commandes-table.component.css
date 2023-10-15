@@ -10,8 +10,9 @@
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
-  border-color: currentColor;
-  background-color: rgba(168, 168, 168, 0.745);
+  border-color: #010626;
+  background-color: #04B2D9;
+  color: #010626;
 
 }
 

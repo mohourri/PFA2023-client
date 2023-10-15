@@ -10,7 +10,7 @@ export class ServerService {
   constructor(private http: HttpClient) { }
   baseUrl : string = "http://localhost:8082"
 
-  getData(): Observable<any> {
+  getAllCommandes(): Observable<any> {
       console.log("hey")
       return this.http.get(`${this.baseUrl}/commandes`);
     }

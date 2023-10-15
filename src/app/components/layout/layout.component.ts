@@ -16,26 +16,32 @@ export class LayoutComponent {
 
   menu: Menu = [
     {
+      title: 'Acueil',
+      icon: 'home',
+      link: '/home',
+      color: '#010626',
+    },
+    {
       title: 'Commandes',
       icon: 'receipt',
-      link: '/home',
-      color: '#ff7f0e',
+      link: '/commandes',
+      color: '#010626',
     },
     {
       title: 'Statistics',
       icon: 'bar_chart',
-      color: '#ff7f0e',
+      color: '#010626',
       subMenu: [
         {
           title: 'Sales',
           icon: 'money',
           link: '/sales',
-          color: '#ff7f0e',
+          color: '#010626',
         },
         {
           title: 'Customers',
           icon: 'people',
-          color: '#ff7f0e',
+          color: '#010626',
           link: '/customers',
         },
       ],
@@ -44,7 +50,7 @@ export class LayoutComponent {
       title: 'Clients',
       icon: 'personne',
       link: '/clients',
-      color: '#ff7f0e',
+      color: '#010626',
     }
   ];
 }
