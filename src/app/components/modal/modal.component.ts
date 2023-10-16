@@ -13,9 +13,11 @@ export class ModalComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public commande: Commande, private server: ServerService,  private router: Router,public dialogRef: MatDialogRef<ModalComponent>){}
   
+  
   ngOnInit(): void {
     console.log('La commande recu:')
     console.log(this.commande)
+    
   }
 
    capitalizeFirstLetter(value: string) {

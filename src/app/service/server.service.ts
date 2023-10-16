@@ -25,5 +25,11 @@ export class ServerService {
 
     // Send a GET request with the ID as part of the URL path
     return this.http.get(`${this.baseUrl}/validate/${id}`);
-}
+  }
+
+  /// Articles
+  getArticles(): Observable<any> {
+      console.log("hey")
+      return this.http.get(`${this.baseUrl}/articles`);
+    }
 }

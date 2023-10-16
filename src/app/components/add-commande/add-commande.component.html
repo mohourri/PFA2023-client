@@ -1,0 +1,123 @@
+<mat-card class="modal-content">
+
+    <mat-card-header class="form-header">
+        <h2 class="form-title">Détails de la Commande</h2>    
+    </mat-card-header>
+  
+    <mat-card-content class="form-content">
+      <mat-tab-group>
+  
+        <!-- Onglet Command Fields -->
+        <mat-tab label="Commande">
+          <div class="form-row">
+            
+            <mat-form-field >
+              <mat-label>Description</mat-label>
+              <textarea matInput  placeholder="Description"></textarea>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field >
+              <mat-label>Date Demande</mat-label>
+              <input matInput [matDatepicker]="picker1"  placeholder="Date Demande">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field >
+              <mat-label>Date Validation</mat-label>
+              <input matInput [matDatepicker]="picker2" placeholder="Date Validation">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label>Status</mat-label>
+              <input matInput  placeholder="Status">
+            </mat-form-field>
+            <mat-slide-toggle class="flex-1" >Validé</mat-slide-toggle>
+          </div>
+        </mat-tab>
+  
+        <!-- Onglet Client Fields -->
+        <mat-tab label="Client">
+          <div class="tab-content">
+            <mat-form-field>
+              <mat-label>CIN</mat-label>
+              <input matInput  placeholder="Client CIN">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Nom</mat-label>
+              <input matInput  placeholder="Client Nom">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Prénom</mat-label>
+              <input matInput  placeholder="Client Prénom">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Sexe</mat-label>
+              <mat-select >
+                <mat-option value="m">Masculin</mat-option>
+                <mat-option value="f">Féminin</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Date de Naissance</mat-label>
+              <input matInput [matDatepicker]="picker3"  placeholder="Date de Naissance">
+              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Téléphone</mat-label>
+              <input matInput placeholder="Client Téléphone">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Adresse</mat-label>
+              <input matInput  placeholder="Client Adresse">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Ville</mat-label>
+              <input matInput   placeholder="Nom de la ville">          
+            </mat-form-field>
+          </div>
+        </mat-tab>
+  
+  
+     <!-- Onglet Ligne Command Fields -->
+     <mat-tab label="Lignes de Commande">
+        <div class="tab-content">
+          <div *ngFor="let ligne of commande.ligne_commandes; let i = index">
+            <mat-card class="ligne-commande-card">
+              <mat-card-content>
+                <mat-form-field>
+                  <mat-label>Article</mat-label>
+                  <mat-select [(ngModel)]="ligne.article" placeholder="Sélectionnez un article">
+                    <mat-option *ngFor="let article of articles" [value]="article">{{ article.libelle }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Quantité</mat-label>
+                  <input matInput type="number" [(ngModel)]="ligne.Quantite" placeholder="Quantité">
+                </mat-form-field>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <button mat-raised-button color="primary">Ajouter Ligne</button>
+        </div>
+      </mat-tab>
+      
+  
+  </mat-tab-group>
+  
+      <button mat-raised-button color="primary" >Ajouter</button>
+  
+    </mat-card-content>
+  </mat-card>
+  

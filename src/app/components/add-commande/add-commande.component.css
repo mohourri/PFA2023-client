@@ -1,0 +1,49 @@
+/* Dans votre fichier CSS */
+
+/* Styles pour la carte principale */
+.modal-content {
+    width: 100%;
+    max-width: 600px;
+    height: 80vh; /* Hauteur maximale de la formulaire (80% de la hauteur de la vue) */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+  }
+  
+  .form-header {
+    display: flex;
+  }
+  
+  .form-title {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  
+  
+  /* Styles pour les champs de formulaire */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Styles pour les onglets */
+  .mat-tab-header {
+    background-color: #1976D2;
+  }
+  
+  .mat-tab-label {
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Styles pour les lignes de formulaire */
+  .form-row {
+    display: flex;
+    gap: 16px;
+  }
+  
+  

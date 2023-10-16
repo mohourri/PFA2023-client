@@ -17,6 +17,7 @@ import {MatSlideToggle} from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LayoutComponent } from './components/layout/layout.component';
+import { AddCommandeComponent } from './components/add-commande/add-commande.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -103,7 +104,8 @@ const routes: Routes = [
     ModalComponent,
     CapitalizePipe,
     SidebarComponent,
-    CommandesComponentComponent
+    CommandesComponentComponent,
+    AddCommandeComponent
     ],
   bootstrap: [AppComponent],
 })

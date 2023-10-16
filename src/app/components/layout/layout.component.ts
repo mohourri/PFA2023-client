@@ -28,6 +28,36 @@ export class LayoutComponent {
       color: '#010626',
     },
     {
+      title: 'Arrivages',
+      icon: 'flight_land',
+      link: '/arrivages',
+      color: '#010626',
+    },
+    {
+      title: 'Clients',
+      icon: 'personne',
+      link: '/clients',
+      color: '#010626',
+    },
+    {
+      title: 'Fournisseurs',
+      icon: 'store',
+      link: '/fournisseurs',
+      color: '#010626',
+    },
+    {
+      title: 'Paiements',
+      icon: 'money',
+      link: '/paiements',
+      color: '#010626',
+    },
+    {
+      title: 'Transporteurs',
+      icon: 'local_shipping',
+      link: '/transporteurs',
+      color: '#010626',
+    },
+    {
       title: 'Statistics',
       icon: 'bar_chart',
       color: '#010626',
@@ -45,12 +75,6 @@ export class LayoutComponent {
           link: '/customers',
         },
       ],
-    },
-    {
-      title: 'Clients',
-      icon: 'personne',
-      link: '/clients',
-      color: '#010626',
     }
   ];
 }
