@@ -47,7 +47,7 @@ export class LayoutComponent {
     },
     {
       title: 'Paiements',
-      icon: 'money',
+      icon: 'payment',
       link: '/paiements',
       color: '#010626',
     },
@@ -58,21 +58,21 @@ export class LayoutComponent {
       color: '#010626',
     },
     {
-      title: 'Statistics',
+      title: 'Statistiques',
       icon: 'bar_chart',
       color: '#010626',
       subMenu: [
         {
-          title: 'Sales',
+          title: 'Ventes',
           icon: 'money',
-          link: '/sales',
+          link: '/ventes_statistiques',
           color: '#010626',
         },
         {
-          title: 'Customers',
-          icon: 'people',
+          title: 'Generale',
+          icon: 'info',
           color: '#010626',
-          link: '/customers',
+          link: '/generale_statistiques',
         },
       ],
     }

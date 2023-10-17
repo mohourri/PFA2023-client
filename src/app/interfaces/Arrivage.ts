@@ -6,7 +6,7 @@ interface Arrivage {
     ID: number;
     nom: string;
     description: string;
-    Date_arrivage: Date;
+    Date_arrivage: string;
     fournisseur: Fournisseur; // You should define the Fournisseur type
     emballages: Emballage[]; // You should define the Emballage type
   }

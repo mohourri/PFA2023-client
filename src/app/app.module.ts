@@ -41,6 +41,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { CapitalizePipe } from './pipes/capitalizing-pipe';
 
 import { HttpClientModule } from '@angular/common/http'; 
+import { ArrivagesComponent } from './components/arrivages/arrivages.component';
+import { ArrivagesTableComponent } from './components/arrivages-table/arrivages-table.component';
+import { FournisseursComponent } from './components/fournisseurs/fournisseurs.component';
+import { PaiementsTableComponent } from './components/paiements-table/paiements-table.component';
+import { PaiementsComponent } from './components/paiements/paiements.component';
+import { TransporteursComponent } from './components/transporteurs/transporteurs.component';
+import { VentesComponent } from './components/ventes/ventes.component';
+import { GeneraleComponent } from './components/generale/generale.component';
+import { FournisseursTableComponent } from './components/fournisseurs-table/fournisseurs-table.component';
 
 const routes: Routes = [
   {
@@ -59,6 +68,30 @@ const routes: Routes = [
   {
     path: 'clients',
     component: SalesComponent, 
+  },
+  {
+    path: 'arrivages',
+    component: ArrivagesComponent, 
+  },
+  {
+    path: 'fournisseurs',
+    component: FournisseursComponent, 
+  },
+  {
+    path: 'paiements',
+    component: PaiementsComponent, 
+  },
+  {
+    path: 'transporteurs',
+    component: TransporteursComponent, 
+  },
+  {
+    path: 'ventes_statistiques',
+    component: VentesComponent, 
+  },
+  {
+    path: 'generale_statistiques',
+    component: GeneraleComponent, 
   },
 ];
 
@@ -105,7 +138,12 @@ const routes: Routes = [
     CapitalizePipe,
     SidebarComponent,
     CommandesComponentComponent,
-    AddCommandeComponent
+    AddCommandeComponent,
+    ArrivagesComponent,
+    ArrivagesTableComponent,
+    FournisseursComponent,
+    FournisseursTableComponent,
+    
     ],
   bootstrap: [AppComponent],
 })

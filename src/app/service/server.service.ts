@@ -29,7 +29,19 @@ export class ServerService {
 
   /// Articles
   getArticles(): Observable<any> {
-      console.log("hey")
-      return this.http.get(`${this.baseUrl}/articles`);
-    }
+    console.log("hey")
+    return this.http.get(`${this.baseUrl}/articles`);
+  }
+
+  /// Arrivages
+  getArrivages(): Observable<any> {
+    console.log("hey")
+    return this.http.get(`${this.baseUrl}/arrivages`);
+  }
+
+  /// Fournisseurs
+  getFournisseurs(): Observable<any> {
+    console.log("hey")
+    return this.http.get(`${this.baseUrl}/fournisseurs`);
+  }
 }
