@@ -50,6 +50,8 @@ import { TransporteursComponent } from './components/transporteurs/transporteurs
 import { VentesComponent } from './components/ventes/ventes.component';
 import { GeneraleComponent } from './components/generale/generale.component';
 import { FournisseursTableComponent } from './components/fournisseurs-table/fournisseurs-table.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { ClientsTableComponent } from './components/clients-table/clients-table.component';
 
 const routes: Routes = [
   {
@@ -67,7 +69,7 @@ const routes: Routes = [
   },
   {
     path: 'clients',
-    component: SalesComponent, 
+    component: ClientsComponent, 
   },
   {
     path: 'arrivages',
@@ -143,7 +145,8 @@ const routes: Routes = [
     ArrivagesTableComponent,
     FournisseursComponent,
     FournisseursTableComponent,
-    
+    ClientsComponent,
+    ClientsTableComponent
     ],
   bootstrap: [AppComponent],
 })

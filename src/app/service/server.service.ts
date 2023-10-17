@@ -44,4 +44,10 @@ export class ServerService {
     console.log("hey")
     return this.http.get(`${this.baseUrl}/fournisseurs`);
   }
+
+  /// CLients
+  getClients(): Observable<any> {
+    console.log("hey")
+    return this.http.get(`${this.baseUrl}/clients`);
+  }
 }

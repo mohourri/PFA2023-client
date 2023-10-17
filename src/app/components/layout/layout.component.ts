@@ -35,7 +35,7 @@ export class LayoutComponent {
     },
     {
       title: 'Clients',
-      icon: 'personne',
+      icon: 'supervisor_account',
       link: '/clients',
       color: '#010626',
     },

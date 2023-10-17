@@ -1,0 +1,12 @@
+<app-page-header icon="supervisor_account">
+    <h2>Clients</h2>
+  
+    <button (click)="openModal()" mat-flat-button color="primary" class="action">
+        <mat-icon>add</mat-icon>
+        <span>Nouveau</span>
+    </button>
+  </app-page-header>
+  
+  <div style="padding: 0 20px">
+    <app-clients-table ></app-clients-table>
+  </div>
